@@ -1,0 +1,54 @@
+html
+    form(action=model.prefix + 'editevent',method='post')
+        input(id='csrf',type='hidden',name='csrf',value=model.csrf)
+        input(id='id',type='hidden',name='id',value=model.prefill.id)
+        fieldset(data-role='controlgroup')
+            label(for='description') description
+                input(id='description',type='text',name='description',value=model.prefill.description)
+        fieldset(data-role='controlgroup')
+            label(for='link') link
+                input(id='link',type='text',name='link',value=model.prefill.link)
+        fieldset(data-role='controlgroup')
+            label(for='startDate') start date
+                input(id='startDate',type='date',name='startDate',value=model.prefill.startDate)
+        fieldset(data-role='controlgroup')
+            label(for='startTime') start time
+                input(id='startTime',type='time',name='startTime',value=model.prefill.startTime)
+        fieldset(data-role='controlgroup')
+            label(for='repeatWeeks') repeat how many weeks
+                input(id='repeatWeeks',type='number',name='repeatWeeks',value=model.prefill.repeatWeeks)
+        h4 visibility to group
+        fieldset(data-role='controlgroup')
+            label(for='showToGroup0') hide
+                if model.prefill.showToGroup==0
+                    input(id='showToGroup0',type='radio',name='showToGroup',value=0, checked)
+                else
+                    input(id='showToGroup0',type='radio',name='showToGroup',value=0)
+            label(for='showToGroup1') busy
+                if model.prefill.showToGroup==1
+                    input(id='showToGroup1',type='radio',name='showToGroup',value=1, checked)
+                else
+                    input(id='showToGroup1',type='radio',name='showToGroup',value=1)
+            label(for='showToGroup2') show
+                if model.prefill.showToGroup==2
+                    input(id='showToGroup2',type='radio',name='showToGroup',value=2, checked)
+                else
+                    input(id='showToGroup2',type='radio',name='showToGroup',value=2)
+        h4 visibility to all
+        fieldset(data-role='controlgroup')
+            label(for='showToAll0') hide
+                if model.prefill.showToAll==0
+                    input(id='showToAll0',type='radio',name='showToAll', value=0, checked)
+                else
+                    input(id='showToAll0',type='radio',name='showToAll', value=0)
+            label(for='showToAll1') busy
+                if model.prefill.showToAll==1
+                    input(id='showToAll1',type='radio',name='showToAll', value=1, checked)
+                else
+                    input(id='showToAll1',type='radio',name='showToAll', value=1)
+            label(for='showToAll2') show
+                if model.prefill.showToAll==2
+                    input(id='showToAll2',type='radio',name='showToAll', value=2, checked)
+                else
+                    input(id='showToAll2',type='radio',name='showToAll', value=2)
+        input(type='submit',value='Update')

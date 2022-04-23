@@ -1,0 +1,6 @@
+remotePort: 8000
+urlPath: ""
+localPort: 8000
+tableOfUsers: users
+tableOfEvents: seminars
+

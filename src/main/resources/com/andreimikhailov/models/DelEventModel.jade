@@ -1,0 +1,15 @@
+html
+    h3 Sure want to delete?
+    div
+      span #{model.datetime + ": " + model.description}
+    div
+      span
+        h3
+          a(href=model.prefix) No, leave it as it is
+    br
+    div
+      span
+        form(action=model.prefix + 'delevent',method='post')
+          input(id='csrf',type='hidden',name='csrf',value=model.csrf)
+          input(id='id',type='hidden',name='id',value=model.id)
+          input(type='submit',value='Yes, delete it !')

@@ -1,0 +1,31 @@
+{ name = "halogen-project"
+, dependencies =
+  [ "aff"
+  , "affjax"
+  , "argonaut-core"
+  , "arrays"
+  , "console"
+  , "datetime"
+  , "effect"
+  , "either"
+  , "exceptions"
+  , "foldable-traversable"
+  , "foreign"
+  , "halogen"
+  , "halogen-vdom"
+  , "http-methods"
+  , "integers"
+  , "js-date"
+  , "lists"
+  , "maybe"
+  , "nonempty"
+  , "prelude"
+  , "psci-support"
+  , "random"
+  , "simple-json"
+  , "web-dom"
+  , "web-html"
+  ]
+, packages = ./packages.dhall
+, sources = [ "src/**/*.purs", "test/**/*.purs" ]
+}

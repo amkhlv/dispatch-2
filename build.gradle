@@ -1,0 +1,56 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+    }
+}
+
+apply plugin: 'application'
+
+mainClassName = "com.andreimikhailov.DispatchKt"
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'kotlin'
+
+compileKotlin.kotlinOptions.jvmTarget = "11"
+compileTestKotlin.kotlinOptions.jvmTarget = "11"
+compileTestKotlin.kotlinOptions.freeCompilerArgs += "-Xjvm-default=enable"
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation "org.http4k:http4k-client-okhttp:${http4kVersion}"
+    implementation "org.http4k:http4k-core:${http4kVersion}"
+    implementation "org.http4k:http4k-format-jackson-yaml:${http4kVersion}"
+    implementation "org.http4k:http4k-format-jackson:${http4kVersion}"
+    implementation "org.http4k:http4k-template-jade4j:${http4kVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-core:2.13.1"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.1"
+    implementation "org.postgresql:postgresql:42.2.2"
+    implementation "org.jetbrains.exposed:exposed-core:0.37.3"
+    implementation "org.jetbrains.exposed:exposed-java-time:0.37.3"
+    implementation("org.slf4j:slf4j-api:1.7.36")
+    implementation("org.slf4j:slf4j-simple:1.7.36")
+    implementation 'org.springframework.security:spring-security-crypto:5.6.3'
+
+    runtimeOnly "org.jetbrains.exposed:exposed-jdbc:0.37.3"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+}

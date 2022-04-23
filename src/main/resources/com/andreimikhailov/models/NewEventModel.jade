@@ -1,0 +1,36 @@
+html
+    form(action=model.prefix + 'newevent',method='post')
+
+        input(id='csrf',type='hidden',name='csrf',value=model.csrf)
+        fieldset(data-role='controlgroup')
+            label(for='description') description
+                input(id='description',type='text',name='description')
+        fieldset(data-role='controlgroup')
+            label(for='link') link
+                input(id='link',type='text',name='link')
+        fieldset(data-role='controlgroup')
+            label(for='startDate') start date
+                input(id='startDate',type='date',name='startDate')
+        fieldset(data-role='controlgroup')
+            label(for='startTime') start time
+                input(id='startTime',type='time',name='startTime')
+        fieldset(data-role='controlgroup')
+            label(for='repeatWeeks') repeat how many weeks
+                input(id='repeatWeeks',type='number',name='repeatWeeks',value=0)
+        h4 visibility to group
+        fieldset(data-role='controlgroup')
+            label(for='showToGroup0') hide
+                input(id='showToGroup0',type='radio',name='showToGroup',value=0)
+            label(for='showToGroup1') busy
+                input(id='showToGroup1',type='radio',name='showToGroup',value=1)
+            label(for='showToGroup2') show
+                input(id='showToGroup2',type='radio',name='showToGroup',value=2, checked)
+        h4 visibility to all
+        fieldset(data-role='controlgroup')
+            label(for='showToAll0') hide
+                input(id='showToAll0',type='radio',name='showToAll', value=0)
+            label(for='showToAll1') busy
+                input(id='showToAll1',type='radio',name='showToAll', value=1)
+            label(for='showToAll2') show
+                input(id='showToAll2',type='radio',name='showToAll', value=2, checked)
+        input(type='submit',value='Add')

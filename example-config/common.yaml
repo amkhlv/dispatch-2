@@ -1,0 +1,5 @@
+proto: https
+site: localhost
+dbURL: "jdbc:postgresql:///andrei?host=/var/run/postgresql/.s.PGSQL.5432"
+dbLogin: andrei 
+dbPassword: "4usNqGWAFT6ZMwbO"
