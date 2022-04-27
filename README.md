@@ -14,13 +14,13 @@ Authorized users can login and add their own events.
 
 ## Build
 
-### Backend
+### Build backend
 
     gradle distTar
 
 This will make `build/distributions/Dispatch.tar`
 
-### Frontend
+### Build frontend
 
     cd halogens/
     ./build.sh
@@ -39,7 +39,15 @@ This will make `mainpage.js`, which should be copied to `~/.config/amkhlv/dispat
 
 ### Two configuration files
 
-See sample files `common.xml` and `instance.xml`
+The config directory is `~/.config/amkhlv/dispatch/`:
+
+    ~/.config/amkhlv/dispatch/
+    ~/.config/amkhlv/dispatch/static
+    ~/.config/amkhlv/dispatch/static/mainpage.js
+    ~/.config/amkhlv/dispatch/instance.yaml
+    ~/.config/amkhlv/dispatch/common.yaml
+
+See sample files `common.xml` and `instance.xml` in `example-config/`.
 
 
 ## NGINX
