@@ -28,7 +28,6 @@ data class YamlConfigInstance(
     , val localPort  : Int
     , val tableOfUsers : String
     , val tableOfEvents: String
-    , val links: Map<String,String>
     , val top: String?
     , val staticDir: String
     , val zoneId: String
