@@ -4,3 +4,11 @@ localPort: 8000
 tableOfUsers: users
 tableOfEvents: seminars
 
+top: >-
+  <a href="https://researchseminars.org/">researchseminars.org</a>
+  <br/>
+  <a href="https://www.ictp-saifr.org/upcoming-seminars-and-activities/">SAIFT seminars</a>
+  <hr/>
+staticDir: /home/andrei/.config/amkhlv/dispatch/static/
+zoneId: America/Sao_Paulo
+
